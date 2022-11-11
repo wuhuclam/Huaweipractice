@@ -119,3 +119,36 @@
 //    printf("%d", i_count);
 //    return  0;
 //}
+
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//    //接收一个十六进制
+//    int i_number = 0;
+//    scanf("%x", &i_number);
+//
+//    printf("%d", i_number);
+//    return 0;
+//}
+
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//    //接收一个浮点数
+//    float f_number = 0;
+//    scanf("%f", &f_number);
+//
+//    //输出结果
+//    if (4.5 != f_number)
+//    {
+//        printf("%.0f", f_number);
+//    }
+//    else
+//    {
+//        printf("5");
+//    }
+//
+//    return 0;
+//}
