@@ -152,3 +152,79 @@
 //
 //    return 0;
 //}
+
+#include <stdio.h>
+
+//int main(void)
+//{
+//    //声明一个变量用来获取数组的大小
+//    int i_size = 0;
+//    scanf("%d", &i_size);
+//    //printf("%d ", i_size);
+//
+//    //声明变长二维数组，只有支持c99的编译器才支持变长数组
+//    //c11中变为可选项，变长数组不可以初始化
+//    int i_number[i_size];
+//
+//    //获取要查找数的个数
+//    int i_k = 0;
+//    scanf("%d", &i_k);
+//    // printf("%d\n", i_k);
+//
+//     //获取数组中的数值
+//    int i_i = 0;
+//    for (i_i = 0; i_i < i_size; i_i++)
+//    {
+//        scanf("%d", &i_number[i_i]);
+//    }
+//    // for(i_i = 0; i_i < i_size; i_i++)
+//    // {
+//    //     printf("%d ", i_number[i_i]);
+//    // }
+//    // printf("\n");
+//
+//    //开始查找并输出
+//    int i_j = 0;
+//    int i_temp = 0;
+//    for (i_i = 0; i_i < i_k; i_i++)
+//    {
+//        for (i_j = i_size - 1; i_j > i_i; i_j--)
+//        {
+//            if (i_number[i_j] < i_number[i_j - 1])
+//            {
+//                i_temp = i_number[i_j];
+//                i_number[i_j] = i_number[i_j - 1];
+//                i_number[i_j - 1] = i_temp;
+//            }
+//        }
+//        printf("%d ", i_number[i_i]);
+//    }
+//    return  0;
+//}
+
+#include <stdio.h>
+
+int main(void)
+{
+    //声明两个变量获取两个整数
+    int i_number_one = 0;
+    int i_number_two = 0;
+    scanf("%d %d", &i_number_one, &i_number_two);
+
+    //求最大公约数
+    int i_a = i_number_one;
+    int i_b = i_number_two;
+    int i_k = 0;
+    while (0 != (i_k = i_a % i_b))
+    {
+        i_a = i_b;
+        i_b = i_k;
+    }
+
+    //求最小公倍数
+    int i_min = (i_number_one * i_number_two) / i_b;
+
+    //输出结果
+    printf("%d", i_min);
+    return  0;
+}
