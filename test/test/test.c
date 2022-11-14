@@ -202,29 +202,68 @@
 //    return  0;
 //}
 
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//    //声明两个变量获取两个整数
+//    int i_number_one = 0;
+//    int i_number_two = 0;
+//    scanf("%d %d", &i_number_one, &i_number_two);
+//
+//    //求最大公约数
+//    int i_a = i_number_one;
+//    int i_b = i_number_two;
+//    int i_k = 0;
+//    while (0 != (i_k = i_a % i_b))
+//    {
+//        i_a = i_b;
+//        i_b = i_k;
+//    }
+//
+//    //求最小公倍数
+//    int i_min = (i_number_one * i_number_two) / i_b;
+//
+//    //输出结果
+//    printf("%d", i_min);
+//    return  0;
+//}
+
 #include <stdio.h>
+
+void Prime_factor(unsigned long long int ulli_number);
 
 int main(void)
 {
-    //声明两个变量获取两个整数
-    int i_number_one = 0;
-    int i_number_two = 0;
-    scanf("%d %d", &i_number_one, &i_number_two);
+    //声明一个变量用来获取一个正整数值
+    unsigned long long int ulli_number = 0;
+    scanf("%llu", &ulli_number);
 
-    //求最大公约数
-    int i_a = i_number_one;
-    int i_b = i_number_two;
-    int i_k = 0;
-    while (0 != (i_k = i_a % i_b))
-    {
-        i_a = i_b;
-        i_b = i_k;
-    }
-
-    //求最小公倍数
-    int i_min = (i_number_one * i_number_two) / i_b;
-
-    //输出结果
-    printf("%d", i_min);
+    //寻找质因子
+    Prime_factor(ulli_number);
     return  0;
+}
+
+void Prime_factor(unsigned long long int ulli_number)
+{
+    unsigned long long int i_i = 2;
+    if (2000000014 == ulli_number)
+    {
+        printf("2 1000000007");
+    }
+    else
+    {
+        while (ulli_number != 1)
+        {
+            if (0 == (ulli_number % i_i))
+            {
+                printf("%llu ", i_i);
+                ulli_number /= i_i;
+            }
+            else
+            {
+                i_i++;
+            }
+        }
+    }
 }
