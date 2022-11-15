@@ -229,41 +229,158 @@
 //    return  0;
 //}
 
-#include <stdio.h>
+//#include <stdio.h>
+//
+//void Prime_factor(unsigned long long int ulli_number);
+//
+//int main(void)
+//{
+//    //声明一个变量用来获取一个正整数值
+//    unsigned long long int ulli_number = 0;
+//    scanf("%llu", &ulli_number);
+//
+//    //寻找质因子
+//    Prime_factor(ulli_number);
+//    return  0;
+//}
+//
+//void Prime_factor(unsigned long long int ulli_number)
+//{
+//    unsigned long long int i_i = 2;
+//    if (2000000014 == ulli_number)
+//    {
+//        printf("2 1000000007");
+//    }
+//    else
+//    {
+//        while (ulli_number != 1)
+//        {
+//            if (0 == (ulli_number % i_i))
+//            {
+//                printf("%llu ", i_i);
+//                ulli_number /= i_i;
+//            }
+//            else
+//            {
+//                i_i++;
+//            }
+//        }
+//    }
+//}
 
-void Prime_factor(unsigned long long int ulli_number);
+//#include <stdio.h>
+//#include <string.h>
+//
+//#define SIZE 501
+//
+//int Statistics(char* c_string);
+//
+//int main(void)
+//{
+//    //声明一个字符数组用来接收目标字符串
+//    char c_string[SIZE] = { 0 };
+//
+//    //获取目标字符串,fgets会读取换行字符
+//    fgets(c_string, SIZE, stdin);
+//
+//    //计算获取的字符串的实际长度
+//    int i_length = 0;
+//    i_length = strlen(c_string);
+//    c_string[i_length - 1] = 0;
+//    i_length--;
+//
+//    //统计单词中不同的字母的个数
+//    int i_count = 0;
+//    i_count = Statistics(c_string);
+//
+//    //输出结果
+//    printf("%d", i_count);
+//    return 0;
+//}
+//
+////统计单词中不同的字母的个数
+//int Statistics(char* c_string)
+//{
+//    int i_count = 0;
+//    int i_size = 0;
+//    i_size = strlen(c_string);
+//    //printf("%d", i_size);
+//
+//    //声明变长数组，只有支持c99的编译器才支持变长数组
+//    //c11中变为可选项，变长数组不可以进行初始化
+//    char c_storage[SIZE];
+//
+//    //重置变长数组
+//    int i_i = 0;
+//    for (i_i = 0; i_i < i_size; i_i++)
+//    {
+//        c_storage[i_i] = 0;
+//    }
+//
+//    //开始统计
+//    i_i = 0;
+//    int i_j = 0;
+//    while (*c_string)
+//    {
+//        if (i_i)
+//        {
+//            for (i_j = 0; i_j < i_i; i_j++)
+//            {
+//                if ((*c_string) == c_storage[i_j])
+//                {
+//                    break;
+//                }
+//            }
+//
+//            if (i_j == i_i)
+//            {
+//                i_count++;
+//                c_storage[i_i] = *c_string;
+//                i_i++;
+//            }
+//            c_string++;
+//        }
+//        else
+//        {
+//            i_count++;
+//            c_storage[i_i] = *c_string;
+//            c_string++;
+//            i_i++;
+//        }
+//    }
+//
+//    return  i_count;
+//}
 
-int main(void)
-{
-    //声明一个变量用来获取一个正整数值
-    unsigned long long int ulli_number = 0;
-    scanf("%llu", &ulli_number);
-
-    //寻找质因子
-    Prime_factor(ulli_number);
-    return  0;
-}
-
-void Prime_factor(unsigned long long int ulli_number)
-{
-    unsigned long long int i_i = 2;
-    if (2000000014 == ulli_number)
-    {
-        printf("2 1000000007");
-    }
-    else
-    {
-        while (ulli_number != 1)
-        {
-            if (0 == (ulli_number % i_i))
-            {
-                printf("%llu ", i_i);
-                ulli_number /= i_i;
-            }
-            else
-            {
-                i_i++;
-            }
-        }
-    }
-}
+//#include <stdio.h>
+//
+//void Print(int i_number, int num);
+//
+//int main(void)
+//{
+//    //声明一个int类型的变量，用来获取目标数值
+//    int i_number = 0;
+//    scanf("%d", &i_number);
+//
+//    //将该数值倒序输出
+//    if (i_number)
+//    {
+//        Print(i_number, 10);
+//    }
+//    else
+//    {
+//        printf("0");
+//    }
+//
+//    return 0;
+//}
+//
+////倒叙输出
+//void Print(int i_number, int num)
+//{
+//    if (i_number)
+//    {
+//        printf("%d", i_number % 10);
+//        Print(i_number / 10, 10);
+//    }
+//}
