@@ -384,3 +384,62 @@
 //        Print(i_number / 10, 10);
 //    }
 //}
+#include <stdio.h>
+#include <stdlib.h>
+
+int Cmp_1(const void* e1, const void* e2);
+int Cmp_0(const void* e1, const void* e2);
+
+int main(void)
+{
+    //获取变长数组的大小
+    int i_size = 0;
+    scanf("%d", &i_size);
+
+    //声明变长数组
+    int i_number[i_size];
+
+    //获取值
+    int i_i = 0;
+    for (i_i = 0; i_i < i_size; i_i++)
+    {
+        scanf("%d", &i_number[i_i]);
+    }
+
+    //获取目标值
+    int i_flag = 0;
+    scanf("%d", &i_flag);
+
+    //使用qsort
+    if (!i_flag)
+    {
+        qsort(i_number,
+            i_size,
+            4,
+            Cmp_1);
+    }
+    else
+    {
+        qsort(i_number,
+            i_size,
+            4,
+            Cmp_0);
+    }
+
+    //输出结果
+    for (i_i = 0; i_i < i_size; i_i++)
+    {
+        printf("%d ", i_number[i_i]);
+    }
+    return  0;
+}
+
+int Cmp_1(const void* e1, const void* e2)
+{
+    return *(int*)e1 - *(int*)e2;
+}
+
+int Cmp_0(const void* e1, const void* e2)
+{
+    return *(int*)e2 - *(int*)e1;
+}
