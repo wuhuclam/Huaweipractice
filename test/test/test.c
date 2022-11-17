@@ -485,3 +485,26 @@
 //{
 //    return  strcmp((char*)e1, (char*)e2);
 //}
+
+#include <stdio.h>
+
+int main(void)
+{
+    //获取一个整数
+    int i_number = 0;
+    scanf("%d", &i_number);
+
+    //获取该int整数，在内存中存储的1的个数
+    int i_i = 0;
+    int i_count = 0;
+    for (i_i = 0; i_i < 32; i_i++)
+    {
+        if (1 & (i_number >> i_i))
+        {
+            i_count++;
+        }
+    }
+
+    printf("%d", i_count);
+    return  0;
+}
