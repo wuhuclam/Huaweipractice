@@ -486,25 +486,55 @@
 //    return  strcmp((char*)e1, (char*)e2);
 //}
 
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//    //获取一个整数
+//    int i_number = 0;
+//    scanf("%d", &i_number);
+//
+//    //获取该int整数，在内存中存储的1的个数
+//    int i_i = 0;
+//    int i_count = 0;
+//    for (i_i = 0; i_i < 32; i_i++)
+//    {
+//        if (1 & (i_number >> i_i))
+//        {
+//            i_count++;
+//        }
+//    }
+//
+//    printf("%d", i_count);
+//    return  0;
+//}
+
 #include <stdio.h>
+
+#define SIZE 32
 
 int main(void)
 {
-    //获取一个整数
-    int i_number = 0;
-    scanf("%d", &i_number);
+    //获取要求的兔子的数量的月份
+    int i_month = 0;
+    scanf("%d", &i_month);
 
-    //获取该int整数，在内存中存储的1的个数
+    //创建数组用来接收每个月兔子的数量
+    int i_number[SIZE] = { 0 };
+
+    //赋初值
+    i_number[0] = 1;
+    i_number[1] = 1;
+
+    //开始计算
     int i_i = 0;
-    int i_count = 0;
-    for (i_i = 0; i_i < 32; i_i++)
+    for (i_i = 2; i_i < SIZE; i_i++)
     {
-        if (1 & (i_number >> i_i))
-        {
-            i_count++;
-        }
+        i_number[i_i] = i_number[i_i - 1] + i_number[i_i - 2];
     }
 
-    printf("%d", i_count);
+    //输出结果
+    printf("%d", i_number[i_month - 1]);
+
     return  0;
 }
