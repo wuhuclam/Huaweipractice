@@ -509,32 +509,70 @@
 //    return  0;
 //}
 
-#include <stdio.h>
+//#include <stdio.h>
+//
+//#define SIZE 32
+//
+//int main(void)
+//{
+//    //获取要求的兔子的数量的月份
+//    int i_month = 0;
+//    scanf("%d", &i_month);
+//
+//    //创建数组用来接收每个月兔子的数量
+//    int i_number[SIZE] = { 0 };
+//
+//    //赋初值
+//    i_number[0] = 1;
+//    i_number[1] = 1;
+//
+//    //开始计算
+//    int i_i = 0;
+//    for (i_i = 2; i_i < SIZE; i_i++)
+//    {
+//        i_number[i_i] = i_number[i_i - 1] + i_number[i_i - 2];
+//    }
+//
+//    //输出结果
+//    printf("%d", i_number[i_month - 1]);
+//
+//    return  0;
+//}
 
-#define SIZE 32
-
-int main(void)
-{
-    //获取要求的兔子的数量的月份
-    int i_month = 0;
-    scanf("%d", &i_month);
-
-    //创建数组用来接收每个月兔子的数量
-    int i_number[SIZE] = { 0 };
-
-    //赋初值
-    i_number[0] = 1;
-    i_number[1] = 1;
-
-    //开始计算
-    int i_i = 0;
-    for (i_i = 2; i_i < SIZE; i_i++)
-    {
-        i_number[i_i] = i_number[i_i - 1] + i_number[i_i - 2];
-    }
-
-    //输出结果
-    printf("%d", i_number[i_month - 1]);
-
-    return  0;
-}
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//    //获取起始小张手上空瓶的数量
+//    int i_num = 0;
+//
+//    //开始获取多组空瓶数量
+//    //计算结果
+//    int i_count = 0;
+//    while (scanf("%d", &i_num))
+//    {
+//        //printf("%d\n", i_num);
+//        i_count = 0;
+//        if (i_num)
+//        {
+//            while (i_num >= 2)
+//            {
+//                if (2 == i_num)
+//                {
+//                    i_num++;
+//                }
+//                i_count += i_num / 3;
+//
+//                i_num = (i_num / 3) + (i_num % 3);
+//            }
+//        }
+//        else
+//        {
+//            break;
+//        }
+//
+//        //输出结果
+//        printf("%d\n", i_count);
+//    }
+//    return  0;
+//}
