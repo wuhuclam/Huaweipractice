@@ -576,3 +576,47 @@
 //    }
 //    return  0;
 //}
+
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//    //声明一个变量用来获取变长二维数组的长度和宽度
+//    int i_size = 0;
+//    scanf("%d", &i_size);
+//
+//    //声明变长二维数组，只有自持c99的编译器才支持变长数组，
+//    //c11中变为可选项，变长数组不可以进行初始化
+//    int i_number[i_size][i_size];
+//
+//    //开始计算二维数组中的值
+//    int i_i = 0;
+//    int i_j = 0;
+//    i_number[0][0] = 1;
+//    int i_flag = 2;
+//    //计算蛇形矩阵的第一行
+//    for (i_j = 1; i_j < i_size; i_j++)
+//    {
+//        i_number[0][i_j] = i_number[0][i_j - 1] + i_flag;
+//        i_flag++;
+//    }
+//    //开始计算其他行
+//    for (i_i = 1; i_i < i_size; i_i++)
+//    {
+//        i_flag = i_i;
+//        for (i_j = 0; i_j < i_size; i_j++)
+//        {
+//            i_number[i_i][i_j] = i_number[i_i - 1][i_j] + i_flag;
+//            i_flag++;
+//        }
+//    }
+//    //输出蛇形矩阵
+//    for (i_i = 0; i_i < i_size; i_i++)
+//    {
+//        for (i_j = 0; i_j < i_size - i_i; i_j++)
+//        {
+//            printf("%d ", i_number[i_i][i_j]);
+//        }
+//        printf("\n");
+//    }
+//}
