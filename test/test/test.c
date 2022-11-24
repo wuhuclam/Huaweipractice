@@ -620,3 +620,52 @@
 //        printf("\n");
 //    }
 //}
+
+#include <stdio.h>
+#include <string.h>
+
+#define SIZE  1001
+
+int main(void)
+{
+    //声明一个字符串用来获取目标字符串
+    char c_string[SIZE] = { 0 };
+
+    //获取目标字符串
+    int i_length = 0;
+    fgets(c_string, SIZE, stdin);
+    i_length = strlen(c_string);
+    c_string[i_length - 1] = 0;
+    i_length--;
+
+    //开始统计
+    int i_letter = 0;
+    int i_space = 0;
+    int i_number = 0;
+    int i_other = 0;
+    int i_i = 0;
+    for (i_i = 0; i_i < i_length; i_i++)
+    {
+        if (c_string[i_i] >= 65 && c_string[i_i] <= 90 || c_string[i_i] >= 97 && c_string[i_i] <= 122)
+        {
+            i_letter++;
+        }
+        else if (c_string[i_i] >= 48 && c_string[i_i] <= 57)
+        {
+            i_number++;
+        }
+        else if (' ' == c_string[i_i])
+        {
+            i_space++;
+        }
+        else
+        {
+            i_other++;
+        }
+    }
+
+    //输出结果
+    printf("%d\n%d\n%d\n%d", i_letter, i_space, i_number, i_other);
+
+    return  0;
+}
