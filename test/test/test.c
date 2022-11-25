@@ -621,51 +621,166 @@
 //    }
 //}
 
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
+//
+//#define SIZE  1001
+//
+//int main(void)
+//{
+//    //声明一个字符串用来获取目标字符串
+//    char c_string[SIZE] = { 0 };
+//
+//    //获取目标字符串
+//    int i_length = 0;
+//    fgets(c_string, SIZE, stdin);
+//    i_length = strlen(c_string);
+//    c_string[i_length - 1] = 0;
+//    i_length--;
+//
+//    //开始统计
+//    int i_letter = 0;
+//    int i_space = 0;
+//    int i_number = 0;
+//    int i_other = 0;
+//    int i_i = 0;
+//    for (i_i = 0; i_i < i_length; i_i++)
+//    {
+//        if (c_string[i_i] >= 65 && c_string[i_i] <= 90 || c_string[i_i] >= 97 && c_string[i_i] <= 122)
+//        {
+//            i_letter++;
+//        }
+//        else if (c_string[i_i] >= 48 && c_string[i_i] <= 57)
+//        {
+//            i_number++;
+//        }
+//        else if (' ' == c_string[i_i])
+//        {
+//            i_space++;
+//        }
+//        else
+//        {
+//            i_other++;
+//        }
+//    }
+//
+//    //输出结果
+//    printf("%d\n%d\n%d\n%d", i_letter, i_space, i_number, i_other);
+//
+//    return  0;
+//}
 
-#define SIZE  1001
+// 杨辉三角的变形
+//1.空间复杂度过高
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//    //声明二维变长数组用来生成杨辉三角的变形,
+//    // 只有支持c99的编译器才支持变长数组，c11中变为可选项，变长数组不可以进行初始化
+//    int i_size_x = 0;
+//    scanf("%d", &i_size_x);
+//
+//    int i_size_y = (2 * i_size_x) - 1;
+//
+//    int i_number[i_size_x][i_size_y];
+//
+//    //统一化变长数组中的值
+//    int i_i = 0;
+//    int i_j = 0;
+//    for (i_i = 0; i_i < i_size_x; i_i++)
+//    {
+//        for (i_j = 0; i_j < i_size_y; i_j++)
+//        {
+//            i_number[i_i][i_j] = 0;
+//        }
+//    }
+//
+//    //获取变长数组中的值
+//    int i_address = 0;
+//    i_number[0][((2 * i_size_x) - 1) / 2] = 1;
+//    for (i_i = 1; i_i < i_size_x; i_i++)
+//    {
+//        for (i_j = 0; i_j < i_size_y; i_j++)
+//        {
+//            if (i_number[i_i - 1][i_j] != 0)
+//            {
+//                i_address = i_j;
+//                break;
+//            }
+//        }
+//        //printf("%d\n", i_address);
+//        for (i_j = i_address - 1; i_j < (i_address - 1) + (2 * i_i) + 1; i_j++)
+//        {
+//            if ((i_j - 1) < 0)
+//            {
+//                i_number[i_i][i_j] =
+//                    i_number[i_i - 1][i_j] + i_number[i_i - 1][i_j + 1];
+//            }
+//            else if ((i_j + 1) == i_size_y)
+//            {
+//                i_number[i_i][i_j] =
+//                    i_number[i_i - 1][i_j] + i_number[i_i - 1][i_j - 1];
+//            }
+//            else
+//            {
+//                i_number[i_i][i_j] =
+//                    i_number[i_i - 1][i_j] + i_number[i_i - 1][i_j - 1] + i_number[i_i - 1][i_j + 1];
+//            }
+//        }
+//    }
+//
+//    //声明一个变量用来获取用户想要判断的行数
+//    int i_num = i_size_x;
+//    //printf("%d %d\n", i_num, i_number[i_num - 1][0]);
+//
+//    int i_flag = -1;
+//    for (i_i = 0; i_i < i_size_y; i_i++)
+//    {
+//        if (0 == (i_number[i_num - 1][i_i] % 2))
+//        {
+//            i_flag = i_i;
+//            break;
+//        }
+//    }
+//
+//    //输出结果
+//    if (i_flag < 0)
+//    {
+//        printf("%d", i_flag);
+//    }
+//    else
+//    {
+//        printf("%d\n", i_flag + 1);
+//    }
+//
+//    //检验变长二维数组
+//    // for(i_i = 0; i_i < i_size_x; i_i++)
+//    // {
+//    //     for(i_j = 0; i_j < i_size_y; i_j++)
+//    //     {
+//    //         printf("%d ", i_number[i_i][i_j]);
+//    //     }
+//    //     printf("\n");
+//    // }
+//    return 0;
+//}
 
-int main(void)
-{
-    //声明一个字符串用来获取目标字符串
-    char c_string[SIZE] = { 0 };
-
-    //获取目标字符串
-    int i_length = 0;
-    fgets(c_string, SIZE, stdin);
-    i_length = strlen(c_string);
-    c_string[i_length - 1] = 0;
-    i_length--;
-
-    //开始统计
-    int i_letter = 0;
-    int i_space = 0;
-    int i_number = 0;
-    int i_other = 0;
-    int i_i = 0;
-    for (i_i = 0; i_i < i_length; i_i++)
-    {
-        if (c_string[i_i] >= 65 && c_string[i_i] <= 90 || c_string[i_i] >= 97 && c_string[i_i] <= 122)
-        {
-            i_letter++;
+//2.
+//题解，根据规律可发现，偶数出现的位置分别是：-1 -1 2 3 2 4 2 3 2 4 循环往复
+#include<stdio.h>
+int main() {
+    int n, m, a[4] = { 2,3,2,4 };
+    while (scanf("%d", &n) != EOF) {
+        if (n <= 2) {
+            m = -1;
         }
-        else if (c_string[i_i] >= 48 && c_string[i_i] <= 57)
-        {
-            i_number++;
+        else {
+            n -= 3;
+            n %= 4;
+            m = a[n];
         }
-        else if (' ' == c_string[i_i])
-        {
-            i_space++;
-        }
-        else
-        {
-            i_other++;
-        }
+        printf("%d\n", m);
     }
-
-    //输出结果
-    printf("%d\n%d\n%d\n%d", i_letter, i_space, i_number, i_other);
-
-    return  0;
+    return 0;
 }
