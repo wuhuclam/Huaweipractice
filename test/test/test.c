@@ -768,19 +768,38 @@
 
 //2.
 //题解，根据规律可发现，偶数出现的位置分别是：-1 -1 2 3 2 4 2 3 2 4 循环往复
-#include<stdio.h>
+//#include<stdio.h>
+//int main() {
+//    int n, m, a[4] = { 2,3,2,4 };
+//    while (scanf("%d", &n) != EOF) {
+//        if (n <= 2) {
+//            m = -1;
+//        }
+//        else {
+//            n -= 3;
+//            n %= 4;
+//            m = a[n];
+//        }
+//        printf("%d\n", m);
+//    }
+//    return 0;
+//}
+
+#include <stdio.h>
+#include <stdlib.h>
+
 int main() {
-    int n, m, a[4] = { 2,3,2,4 };
-    while (scanf("%d", &n) != EOF) {
-        if (n <= 2) {
-            m = -1;
-        }
-        else {
-            n -= 3;
-            n %= 4;
-            m = a[n];
-        }
-        printf("%d\n", m);
+    char str[100][22];
+    int i = 0;
+    int x;
+    while (1) {
+        x = scanf("%[a-z|A-Z]", str[i]);
+        if (getchar() == '\n') break;
+        if (x) i++;
+    }
+    for (int j = i; j >= 0; j--) {
+        printf("%s ", str[j]);
     }
     return 0;
 }
+
