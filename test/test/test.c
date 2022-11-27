@@ -785,21 +785,57 @@
 //    return 0;
 //}
 
-#include <stdio.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//int main() {
+//    char str[100][22];
+//    int i = 0;
+//    int x;
+//    while (1) {
+//        x = scanf("%[a-z|A-Z]", str[i]);
+//        if (getchar() == '\n') break;
+//        if (x) i++;
+//    }
+//    for (int j = i; j >= 0; j--) {
+//        printf("%s ", str[j]);
+//    }
+//    return 0;
+//}
+//
 
-int main() {
-    char str[100][22];
-    int i = 0;
-    int x;
-    while (1) {
-        x = scanf("%[a-z|A-Z]", str[i]);
-        if (getchar() == '\n') break;
-        if (x) i++;
+
+#include <stdio.h>
+#include <string.h>
+
+#define SIZE 251
+
+int main(void)
+{
+    //声明一个字符数组用来获取目标字符串
+    char c_string[SIZE] = { 0 };
+
+    //获取目标字符串
+    int i_length = 0;
+    fgets(c_string, SIZE, stdin);
+    i_length = strlen(c_string);
+    c_string[i_length - 1] = 0;
+    i_length--;
+
+    //开始统计
+    int i_count = 0;
+    int i_i = 0;
+    for (i_i = 0; i_i < i_length; i_i++)
+    {
+        if (c_string[i_i] >= 'A' && c_string[i_i] <= 'Z')
+        {
+            i_count++;
+        }
     }
-    for (int j = i; j >= 0; j--) {
-        printf("%s ", str[j]);
-    }
+
+    //输出结果
+    printf("%d", i_count);
+
+
     return 0;
 }
-
