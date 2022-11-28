@@ -805,37 +805,69 @@
 //
 
 
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
+//
+//#define SIZE 251
+//
+//int main(void)
+//{
+//    //声明一个字符数组用来获取目标字符串
+//    char c_string[SIZE] = { 0 };
+//
+//    //获取目标字符串
+//    int i_length = 0;
+//    fgets(c_string, SIZE, stdin);
+//    i_length = strlen(c_string);
+//    c_string[i_length - 1] = 0;
+//    i_length--;
+//
+//    //开始统计
+//    int i_count = 0;
+//    int i_i = 0;
+//    for (i_i = 0; i_i < i_length; i_i++)
+//    {
+//        if (c_string[i_i] >= 'A' && c_string[i_i] <= 'Z')
+//        {
+//            i_count++;
+//        }
+//    }
+//
+//    //输出结果
+//    printf("%d", i_count);
+//
+//
+//    return 0;
+//}
 
-#define SIZE 251
+#include <stdio.h>
 
 int main(void)
 {
-    //声明一个字符数组用来获取目标字符串
-    char c_string[SIZE] = { 0 };
+    //声明一个变量用来获取目标整数
+    int i_number = 0;
+    //scanf("%d", &i_number);
 
-    //获取目标字符串
-    int i_length = 0;
-    fgets(c_string, SIZE, stdin);
-    i_length = strlen(c_string);
-    c_string[i_length - 1] = 0;
-    i_length--;
-
-    //开始统计
-    int i_count = 0;
+    //获取整数中二进制表示中的一的个数
     int i_i = 0;
-    for (i_i = 0; i_i < i_length; i_i++)
+    int i_count = 0;
+    int i_flag = 0;
+
+    while (scanf("%d", &i_number) != EOF)
     {
-        if (c_string[i_i] >= 'A' && c_string[i_i] <= 'Z')
+        i_flag = i_number;
+        i_count = 0;
+        i_i = 0;
+        while (i_i < 32)
         {
-            i_count++;
+            if (1 & (i_flag >> i_i++))
+            {
+                i_count++;
+            }
         }
+
+        //输出结果
+        printf("%d\n", i_count);
     }
-
-    //输出结果
-    printf("%d", i_count);
-
-
-    return 0;
+    return  0;
 }
