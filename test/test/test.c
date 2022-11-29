@@ -840,34 +840,56 @@
 //    return 0;
 //}
 
-#include <stdio.h>
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//    //声明一个变量用来获取目标整数
+//    int i_number = 0;
+//    //scanf("%d", &i_number);
+//
+//    //获取整数中二进制表示中的一的个数
+//    int i_i = 0;
+//    int i_count = 0;
+//    int i_flag = 0;
+//
+//    while (scanf("%d", &i_number) != EOF)
+//    {
+//        i_flag = i_number;
+//        i_count = 0;
+//        i_i = 0;
+//        while (i_i < 32)
+//        {
+//            if (1 & (i_flag >> i_i++))
+//            {
+//                i_count++;
+//            }
+//        }
+//
+//        //输出结果
+//        printf("%d\n", i_count);
+//    }
+//    return  0;
+//}
 
-int main(void)
-{
-    //声明一个变量用来获取目标整数
-    int i_number = 0;
-    //scanf("%d", &i_number);
-
-    //获取整数中二进制表示中的一的个数
-    int i_i = 0;
-    int i_count = 0;
-    int i_flag = 0;
-
-    while (scanf("%d", &i_number) != EOF)
-    {
-        i_flag = i_number;
-        i_count = 0;
-        i_i = 0;
-        while (i_i < 32)
-        {
-            if (1 & (i_flag >> i_i++))
-            {
-                i_count++;
-            }
-        }
-
-        //输出结果
-        printf("%d\n", i_count);
-    }
-    return  0;
-}
+//#include <stdio.h>
+//
+//int main()
+//{
+//    int n;
+//    while (scanf("%d", &n) != EOF)
+//    {
+//        int i, j, k;
+//        for (i = 0; i <= 20; i++)
+//        {
+//            for (j = 0; j <= (100 - 5 * i) / 3; j++)
+//            {
+//                k = 3 * (100 - 5 * i - 3 * j);
+//                if ((i + j + k) == 100)
+//                    printf("%d %d %d\n", i, j, k);
+//            }
+//        }
+//    }
+//    return 0;
+//
+//}
