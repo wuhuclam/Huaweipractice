@@ -893,3 +893,122 @@
 //    return 0;
 //
 //}
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//
+//int Cmp_int(const void* e1, const void* e2);
+//void Delete(int* i_number_sum, int i_size, int i_address);
+//int Deduplication(int* i_number_sum, int i_size);
+//
+//int main(void)
+//{
+//    //声明两个变量用来获取两个整形数组的大小，并且定义变长数组，然后获取数组中的数值
+//    int i_size_one = 0;
+//    scanf("%d", &i_size_one);
+//
+//    int i_number_one[i_size_one];
+//    int i_i = 0;
+//    for (i_i = 0; i_i < i_size_one; i_i++)
+//    {
+//        scanf("%d", &i_number_one[i_i]);
+//    }
+//
+//    int i_size_two = 0;
+//    scanf("%d", &i_size_two);
+//
+//    int i_number_two[i_size_two];
+//    for (i_i = 0; i_i < i_size_two; i_i++)
+//    {
+//        scanf("%d", &i_number_two[i_i]);
+//    }
+//
+//    //验证是否获取成功
+//    // for(i_i = 0; i_i < i_size_one; i_i++)
+//    // {
+//    //     printf("%d ", i_number_one[i_i]);
+//    // }
+//    // printf("\n");
+//    // for(i_i = 0; i_i < i_size_two; i_i++)
+//    // {
+//    //     printf("%d ", i_number_two[i_i]);
+//    // }
+//
+//    //将两个数组合并
+//    int i_size_sum = 0;
+//    i_size_sum = i_size_one + i_size_two;
+//    int i_number_sum[i_size_sum];
+//
+//    //输入数值
+//    int i_j = 0;
+//    for (i_i = 0; i_i < i_size_one; i_i++)
+//    {
+//        i_number_sum[i_i] = i_number_one[i_i];
+//    }
+//    for (i_j = 0; i_j < i_size_two; i_j++, i_i++)
+//    {
+//        i_number_sum[i_i] = i_number_two[i_j];
+//    }
+//
+//    //验证
+//    // for(i_i = 0; i_i < i_size_sum; i_i++)
+//    // {
+//    //     printf("%d ", i_number_sum[i_i]);
+//    // }
+//
+//    //printf("%zd\n",  sizeof(i_number_sum) / sizeof(i_number_sum[0]));
+//    //开始排序
+//    qsort(i_number_sum,
+//        sizeof(i_number_sum) / sizeof(i_number_sum[0]),
+//        sizeof(i_number_sum[0]),
+//        Cmp_int);
+//
+//    //去重
+//    int i_size = 0;
+//    i_size = Deduplication(i_number_sum, i_size_sum);
+//    //printf("%d\n", i_size);
+//
+//    //输出结果
+//    for (i_i = 0; i_i < i_size; i_i++)
+//    {
+//        printf("%d", i_number_sum[i_i]);
+//    }
+//    return  0;
+//}
+//
+//int Cmp_int(const void* e1, const void* e2)
+//{
+//    return *(int*)e1 - *(int*)e2;
+//}
+//
+//int Deduplication(int* i_number_sum, int i_size)
+//{
+//    int i_i = 0;
+//    int i_j = 0;
+//    //printf("%d\n", i_size);
+//    for (i_i = 0; i_i < i_size - 1; i_i++)
+//    {
+//        for (i_j = i_i + 1; i_j < i_size; i_j++)
+//        {
+//            if (*(i_number_sum + i_i) == *(i_number_sum + i_j))
+//            {
+//                Delete(i_number_sum, i_size, i_j);
+//                i_j--;
+//                i_size--;
+//            }
+//        }
+//    }
+//
+//    return  i_size;
+//}
+//
+//void Delete(int* i_number_sum, int i_size, int i_address)
+//{
+//    //printf("%d\n", i_size);
+//    //printf("%d\n\n", i_address);
+//    int i_i = 0;
+//    for (i_i = i_address; i_i < i_size - 1; i_i++)
+//    {
+//        *(i_number_sum + i_i) = *(i_number_sum + i_i + 1);
+//    }
+//}
