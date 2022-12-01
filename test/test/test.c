@@ -1012,3 +1012,41 @@
 //        *(i_number_sum + i_i) = *(i_number_sum + i_i + 1);
 //    }
 //}
+
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//    //声明一个变量用来获取一个值
+//    int i_number = 0;
+//
+//    //开始统计
+//    int i_count_a = 0;
+//    int i_count_c = 0;
+//    int i_sum = 0;
+//    float f_avg = 0;
+//    while ((scanf("%d", &i_number)) != EOF)
+//    {
+//        if (i_number < 0)
+//        {
+//            i_count_a++;
+//        }
+//        else
+//        {
+//            i_sum += i_number;
+//            i_count_c++;
+//        }
+//    }
+//
+//    printf("%d\n", i_count_a);
+//
+//    if (i_count_c)
+//    {
+//        printf("%.1f", i_sum * 1.0 / i_count_c);
+//    }
+//    else
+//    {
+//        printf("0.0");
+//    }
+//    return  0;
+//}
